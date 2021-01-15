@@ -11,7 +11,15 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
+  const headerCard = document.querySelector(".header");
+  const date = document.querySelector(".date");
+  const title = document.querySelector("h1");
+  const temp = document.querySelector(".temp");
+
+  let dateText = getElementbyId(".date").textContent;
+
+  return headerCard;
+};
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -20,6 +28,6 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-}
+};
 
-export { Header, headerAppender }
+export { Header, headerAppender };
