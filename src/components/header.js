@@ -20,8 +20,15 @@ const Header = (title, date, temp) => {
 
   //text
   date.textContent = `Date: ${date}`;
-  title.textContent = `${Title}`;
+  title.textContent = `${title}`;
   temp.textContent = `Temp: ${temp}`;
+
+  // class names, attributes
+  headerCard.classList.add("header");
+  date.classList.add("date");
+  temp.classList.add("temp");
+
+  // adding some interactivity
 
   return headerCard;
 };
@@ -33,6 +40,10 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+  header.appendChild("headerCard");
+  header.appendChild("header");
+  header.appendChild("date");
+  header.appendChild("temp");
 };
 
 export { Header, headerAppender };
