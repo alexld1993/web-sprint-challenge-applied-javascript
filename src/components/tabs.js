@@ -16,14 +16,23 @@ const Tabs = (topics) => {
 
   // creating elements
   const tabsCard = document.createElement("div");
-  const topics = document.createElement("div");
+  const topic1 = document.createElement("div");
+  const topic2 = document.createElement("div");
+  const topic3 = document.createElement("div");
 
   //text
-  topics.forEach((topic) => {
-    topic.textContent = `Date: ${date}`;
-    topic.textContent = `${title}`;
-    topic.textContent = `Temp: ${temp}`;
-  });
+
+  topic1.textContent = "JavaScript";
+  topic2.textContent = "Bootstrap";
+  topic3.textContent = "Technology";
+
+  headline.textContent = `${headline}`;
+  authorName.textContent = `Author: ${authorName}`;
+  image.src = imageURL;
+  card.classList.add("card");
+  headline.classList.add("headline");
+  author.classList.add("author");
+  imgContainer.classList.add("img-container");
 
   return tabsCard;
 };
@@ -36,6 +45,10 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+
+  tabsCard.appendChild(topic1);
+  tabsCard.appendChild(topic2);
+  tabsCard.appendChild(topic3);
 };
 
 export { Tabs, tabsAppender };

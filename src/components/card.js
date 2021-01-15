@@ -46,6 +46,12 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+  card.appendChild(headline);
+  card.appendChild(author);
+  card.appendChild(imgContainer);
+  card.appendChild(img);
+  card.appendChild(authorName);
 };
 
 export { Card, cardAppender };
