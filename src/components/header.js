@@ -11,12 +11,17 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-  const headerCard = document.querySelector(".header");
-  const date = document.querySelector(".date");
-  const title = document.querySelector("h1");
-  const temp = document.querySelector(".temp");
 
-  let dateText = getElementbyId(".date").textContent;
+  // creating elements
+  const headerCard = document.createElement("div");
+  const date = document.createElement("span");
+  const title = document.createElement("h1");
+  const temp = document.createElement("span");
+
+  //text
+  date.textContent = `Date: ${date}`;
+  title.textContent = `${Title}`;
+  temp.textContent = `Temp: ${temp}`;
 
   return headerCard;
 };
