@@ -38,10 +38,12 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-
-  headerCard.appendChild("header");
-  headerCard.appendChild("date");
-  headerCard.appendChild("temp");
+  headerCard.append(date, h1, temp);
+  // headerCard.appendChild("header");
+  // headerCard.appendChild("date");
+  // headerCard.appendChild("temp");
 };
 
 export { Header, headerAppender };
+
+document.querySelector(".header-container").append("headerAppender()");

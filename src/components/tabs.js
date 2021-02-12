@@ -1,3 +1,5 @@
+
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -16,39 +18,37 @@ const Tabs = (topics) => {
 
   // creating elements
   const tabsCard = document.createElement("div");
-  const topic1 = document.createElement("div");
-  const topic2 = document.createElement("div");
-  const topic3 = document.createElement("div");
-
+  tabsCard.classList.add("tab");
+  tabsCard.textContent = topics;
   //text
-
-  topic1.textContent = "JavaScript";
-  topic2.textContent = "Bootstrap";
-  topic3.textContent = "Technology";
-
-  headline.textContent = `${headline}`;
-  authorName.textContent = `Author: ${authorName}`;
-  image.src = imageURL;
-  card.classList.add("card");
-  headline.classList.add("headline");
-  author.classList.add("author");
-  imgContainer.classList.add("img-container");
 
   return tabsCard;
 };
 
-const tabsAppender = (selector) => {
-  // TASK 4
-  // ---------------------
-  // Implement this function which takes a css selector as its only argument.
-  // It should obtain topics from this endpoint: `https://lambda-times-api.herokuapp.com/topics`
+import axios from "axios";
+
+axios.get("https://lambda-times-api.herokuapp.com/topics")
+.then(res => {
+  res.data.topics.map((topic)=>{
+    document.querySelector(".topics").append(topics.Tabs(topic))
+}).catch((err) => {
+  console.log(err)
+})
+  
+
+
+ const tabsAppender = (selector) => {
+   // TASK 4
+   // ---------------------
+   // Implement this function which takes a css selector as its only argument.
+   // It should obtain topics from this endpoint: `https://lambda-times-api.herokuapp.com/topics`
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
-  // Append the tabs to the element in the DOM that matches the selector passed to the function.
-  //
+   // Append the tabs to the element in the DOM that matches the selector passed to the function.
+   //
 
   tabsCard.appendChild(topic1);
   tabsCard.appendChild(topic2);
   tabsCard.appendChild(topic3);
 };
 
-export { Tabs, tabsAppender };
+export { Tabs, tabsAppender}
